@@ -11,12 +11,7 @@ def prompt_player_type(default)
   puts "    [1] Computer"
   puts "    [2] Human "
   print "Input (default: #{default}): "
-  input = gets.chomp
-  if !input.empty? && PLAYER_TYPES[input]
-    PLAYER_TYPES[input]
-  else 
-    PLAYER_TYPES[default]
-  end
+  PLAYER_TYPES[gets.chomp] || PLAYER_TYPES[default]
 end
 
 puts "Who will set the secret code?: "
